@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de inscritos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="list-container">
+        <h1>Listado de inscritos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Turno</th>
+                    <th>Seminarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ins in inscritos %}
+                <tr>
+                    <td>{{ ins.fecha }}</td>
+                    <td>{{ ins.nombre }}</td>
+                    <td>{{ ins.apellido }}</td>
+                    <td>{{ ins.turno }}</td>
+                    <td>{{ ins.seminarios }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
